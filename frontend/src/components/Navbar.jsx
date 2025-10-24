@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import {assets} from '../assets/assets'
+import calendar from '../assets/calendar.png';
 import { Link, NavLink } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext';
 
@@ -19,31 +20,35 @@ const Navbar = () => {
   return (
     <div className='flex items-center justify-between py-5 text-2xl'>
       
-      <Link to='/'><h1>FurniVerse</h1></Link>
+      <Link to="/" className="flex items-center font-extrabold text-2xl">
+        <span>Mentor</span>
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#e67e22] to-[#f39c12] mx-[-5px]">
+          Map
+        </span>
+        </Link>
+
 
       <ul className='hidden sm:flex gap-5 text-sm text-gray-700'>
         
-        <NavLink to='/' className='flex flex-col items-center gap-1'>
-            <p>HOME</p>
-            <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
-        </NavLink>
-        <NavLink to='/collection' className='flex flex-col items-center gap-1'>
-            <p>SHOP</p>
-            <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
-        </NavLink>
-        <NavLink to='/about' className='flex flex-col items-center gap-1'>
-            <p>ABOUT</p>
-            <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
-        </NavLink>
-        <NavLink to='/contact' className='flex flex-col items-center gap-1'>
-            <p>CONTACT</p>
-            <hr className='w-2/4 border-none h-[1.5px] bg-gray-700 hidden' />
+        <NavLink
+          to="/"
+          className="relative text-[#2c3e50] no-underline font-medium transition-colors duration-300 ease-in-out hover:text-[#667eea] after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#667eea] after:to-[#764ba2] after:transition-all after:duration-300 after:ease-in-out hover:after:w-full flex flex-col items-center gap-1">
+          <p>HOME</p>
         </NavLink>
 
+        <NavLink to='/collection' className="relative text-[#2c3e50] no-underline font-medium transition-colors duration-300 ease-in-out hover:text-[#667eea]after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px]after:bg-gradient-to-r after:from-[#667eea] after:to-[#764ba2]after:transition-all after:duration-300 after:ease-in-out hover:after:w-full flex flex-col items-center gap-1">
+            <p>Browse Mentors</p>
+        </NavLink>
+        <NavLink to='/about' className="relative text-[#2c3e50] no-underline font-medium transition-colors duration-300 ease-in-out hover:text-[#667eea] after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#667eea] after:to-[#764ba2] after:transition-all after:duration-300 after:ease-in-out hover:after:w-full flex flex-col items-center gap-1">
+            <p>Top Universities</p>
+        </NavLink>
+        <NavLink to='/contact' className="relative text-[#2c3e50] no-underline font-medium transition-colors duration-300 ease-in-out hover:text-[#667eea] after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#667eea] after:to-[#764ba2] after:transition-all after:duration-300 after:ease-in-out hover:after:w-full flex flex-col items-center gap-1">
+            <p>About Us</p>
+        </NavLink>
       </ul>
 
       <div className='flex items-center gap-6'>
-            <img onClick={()=> { setShowSearch(true); navigate('/collection') }} src={assets.search_icon} className='w-5 cursor-pointer' alt="" />
+            {/* <img onClick={()=> { setShowSearch(true); navigate('/collection') }} src={assets.search_icon} className='w-5 cursor-pointer' alt="" /> */}
             
             <div className='group relative'>
                 <img onClick={()=> token ? null : navigate('/login') } className='w-5 cursor-pointer' src={assets.profile_icon} alt="" />
@@ -58,7 +63,7 @@ const Navbar = () => {
                 </div>}
             </div> 
             <Link to='/cart' className='relative'>
-                <img src={assets.cart_icon} className='w-5 min-w-5' alt="" />
+                <img src={calendar} className='w-5 min-w-5' alt="" />
                 <p className='absolute right-[-5px] bottom-[-5px] w-4 text-center leading-4 bg-black text-white aspect-square rounded-full text-[8px]'>{getCartCount()}</p>
             </Link> 
             <img onClick={()=>setVisible(true)} src={assets.menu_icon} className='w-5 cursor-pointer sm:hidden' alt="" /> 
