@@ -16,9 +16,9 @@ const BestSeller = () => {
   return (
     <div className='my-10'>
       <div className='text-center text-3xl py-8'>
-        <Title text1={'BEST'} text2={'SELLERS'}/>
+        <Title text1={'BEST'} text2={'MENTORS'}/>
         <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
-        "Experience the charm of our best seller – a perfect blend of style, comfort, and functionality, loved by homeowners for its timeless appeal."
+        Looking to apply to abroad for master? Our student will guide you through the whole process.
         </p>
       </div>
 
