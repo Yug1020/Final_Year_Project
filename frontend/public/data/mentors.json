@@ -1,0 +1,78 @@
+{
+  "mentors": [
+    {
+      "id": 1,
+      "name": "Smit Dalvi",
+      "university": "George Mason University",
+      "photo": "C:\\Users\\shrav\\Downloads\\Mentors\\Photos.master\\Smit Dalvi.png",
+      "country": "USA"
+    },
+    {
+      "id": 2,
+      "name": "Utkarsh Gupta",
+      "university": "University of Texas",
+      "photo": "C:\\Users\\shrav\\Downloads\\Mentors\\Photos.master\\Utkarsh Gupta.png",
+      "country": "USA"
+    },
+    {
+      "id": 3,
+      "name": "Soham Pawaskar",
+      "university": "University of Maryland",
+      "photo": "C:\\Users\\shrav\\Downloads\\Mentors\\Photos.master\\Soham Pawaskar.png",
+      "country": "UK"
+    },
+    {
+      "id": 4,
+      "name": "Vaibhavi Thakur",
+      "university": "University of Colorado Boulder",
+      "photo": "C:\\Users\\shrav\\Downloads\\Mentors\\Photos.master\\Vaibhavi Thakur.png",
+      "country": "USA"
+    },
+    {
+      "id": 5,
+      "name": "Varadmurty Mohod",
+      "university": "Northeastern University",
+      "photo": "C:\\Users\\shrav\\Downloads\\Mentors\\Photos.master\\Varadmurty Mohod.png",
+      "country": "USA"
+    },
+    {
+      "id": 6,
+      "name": "Hrishikesh Shetty",
+      "university": "Duke University",
+      "photo": "C:\\Users\\shrav\\Downloads\\Mentors\\Photos.master\\Hrishikesh Shetty.png",
+      "country": "USA"
+    },
+    {
+      "id": 7,
+      "name": "Hrishikesh Surlekar",
+      "university": "John Hokins University",
+      "photo": "C:\\Users\\shrav\\Downloads\\Mentors\\Photos.master\\Hrishikesh Surlekar.png",
+      "country": "USA"
+    },
+    {
+      "id": 8,
+      "name": "Ishan Vatsaraj",
+      "university": "John Hokins University",
+      "photo": "C:\\Users\\shrav\\Downloads\\Mentors\\Photos.master\\Ishan Vatsaraj.png",
+      "country": "USA"
+    }
+  ],
+  "universities": [
+    "Harvard University",
+    "Stanford University",
+    "MIT",
+    "Princeton University",
+    "Columbia University",
+    "UC Berkeley",
+    "Imperial College London",
+    "London School of Economics",
+    "University of Cambridge",
+    "University of Oxford"
+  ],
+  "stats": {
+    "totalStudents": 5000,
+    "totalCountries": 30,
+    "successRate": 95,
+    "totalMentors": 150
+  }
+}
