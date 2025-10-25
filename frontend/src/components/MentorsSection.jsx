@@ -6,21 +6,19 @@ const MentorsSection = () => {
 
   // ✅ Fetch mentors.json from public/data/Mentors/
   useEffect(() => {
-    fetch("/data/Mentors/mentors.json")
-      .then((res) => res.json())
-      .then((data) => setMentorsData(data))
-      .catch((err) => console.error("Error loading mentors:", err));
-  }, []);
+  fetch("/data/Mentors/mentors.json")
+    .then((res) => {
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      return res.json();
+    })
+    .then((data) => {
+      console.log("✅ Mentors loaded:", data);
+      setMentorsData(data);
+    })
+    .catch((err) => console.error("❌ Error loading mentors:", err));
+}, []);
 
-  if (!mentorsData) {
-    return (
-      <div className="text-center text-gray-600 py-20 text-xl">
-        Loading mentors...
-      </div>
-    );
-  }
-
-  const allMentors = mentorsData.mentors || [];
+  const allMentors = mentorsData?.mentors || [];
 
   const filteredMentors = useMemo(() => {
     if (!searchQuery.trim()) return allMentors;
@@ -32,11 +30,26 @@ const MentorsSection = () => {
     );
   }, [allMentors, searchQuery]);
 
+  if (!mentorsData) {
+    return (
+      <div className="text-center text-gray-600 py-20 text-xl">
+        Loading mentors...
+      </div>
+    );
+  }
+
   const getPhotoSrc = (photoPath) => {
     if (!photoPath) return "";
+    // If photoPath is already just a filename, use it directly
+    if (!photoPath.includes('/') && !photoPath.includes('\\')) {
+      const src = `/data/Mentors/Photos.master/${encodeURIComponent(photoPath)}`;
+      return src;
+    }
+    // If it's a full path, extract the filename
     const parts = photoPath.split(/[\\/]/);
     const filename = parts[parts.length - 1];
-    return `/data/Mentors/Photos.master/${encodeURIComponent(filename)}`;
+    const src = `/data/Mentors/Photos.master/${encodeURIComponent(filename)}`;
+    return src;
   };
 
   const rowA = filteredMentors.filter((_, i) => i % 2 === 0);
@@ -72,6 +85,10 @@ const MentorsSection = () => {
                   src={getPhotoSrc(mentor.photo)}
                   alt={mentor.name}
                   className="w-[90%] h-[220px] object-cover rounded-xl mx-auto mt-4"
+                  onError={(e) => {
+                    e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9Ijc1IiByPSIzMCIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNNTAgMTUwQzUwIDEyNSA3NSAxMDAgMTAwIDEwMEMxMjUgMTAwIDE1MCAxMjUgMTUwIDE1MFYxNzBINTAgVjE1MFoiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+';
+                    e.target.onerror = null;
+                  }}
                 />
                 <div className="p-5 text-center">
                   <h3 className="text-lg font-semibold">{mentor.name}</h3>
@@ -99,6 +116,10 @@ const MentorsSection = () => {
                     src={getPhotoSrc(mentor.photo)}
                     alt={mentor.name}
                     className="w-[90%] h-[220px] object-cover rounded-xl mx-auto mt-4"
+                    onError={(e) => {
+                      e.target.src = '/data/Mentors/Photos.master/default-avatar.png';
+                      e.target.onerror = null;
+                    }}
                   />
                   <div className="p-5 text-center">
                     <h3 className="text-lg font-semibold">{mentor.name}</h3>
@@ -120,6 +141,10 @@ const MentorsSection = () => {
                     src={getPhotoSrc(mentor.photo)}
                     alt={mentor.name}
                     className="w-[90%] h-[220px] object-cover rounded-xl mx-auto mt-4"
+                    onError={(e) => {
+                      e.target.src = '/data/Mentors/Photos.master/default-avatar.png';
+                      e.target.onerror = null;
+                    }}
                   />
                   <div className="p-5 text-center">
                     <h3 className="text-lg font-semibold">{mentor.name}</h3>

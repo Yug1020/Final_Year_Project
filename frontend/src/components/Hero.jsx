@@ -46,7 +46,7 @@ const Hero = () => {
           xmlns="http://www.w3.org/2000/svg"
           className="text-white text-[2.5em] fill-white"
         >
-          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3..." />
+          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.2-1.3-5.2-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.2 1.3 5.2 3.6zM142.7 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.2-1.3-5.2-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.2 1.3 5.2 3.6zM119.5 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.2-1.3-5.2-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.2 1.3 5.2 3.6z" />
         </svg>
         <div className="absolute bottom-0 w-full h-10 bg-white/5 flex justify-center items-center text-white">
           Github
@@ -66,7 +66,7 @@ const Hero = () => {
           xmlns="http://www.w3.org/2000/svg"
           className="text-white text-[2.5em] fill-white"
         >
-          <path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22..." />
+          <path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-64 144c-5 11.1-2.6 24.2 6.1 32.2l64 64c8.7 8.7 22.9 8.7 31.6 0l64-64c8.7-8.7 11.1-21.1 6.1-32.2l-64-144c-4.9-17-22.6-26.9-39.6-22z" />
         </svg>
         <div className="absolute bottom-0 w-full h-10 bg-white/5 flex justify-center items-center text-white">
           Code
@@ -86,7 +86,7 @@ const Hero = () => {
           xmlns="http://www.w3.org/2000/svg"
           className="text-white text-[2.5em] fill-white"
         >
-          <path d="" />
+          <path d="M288 0C126.3 0 0 126.3 0 288s126.3 288 288 288 288-126.3 288-288S449.7 0 288 0zM144 288c0-79.5 64.5-144 144-144s144 64.5 144 144-64.5 144-144 144S144 367.5 144 288z" />
         </svg>
         <div className="absolute bottom-0 w-full h-10 bg-white/5 flex justify-center items-center text-white">
           Earn

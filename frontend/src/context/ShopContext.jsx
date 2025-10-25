@@ -41,14 +41,14 @@ const ShopContextProvider = (props) => {
         }
         setCartItems(cartData);
 
-        if (token) {
+        if (token && backendUrl) {
             try {
 
                 await axios.post(backendUrl + '/api/cart/add', { itemId, size }, { headers: { token } })
 
             } catch (error) {
-                console.log(error)
-                toast.error(error.message)
+                console.log('Backend not available for cart add:', error.message)
+                // Don't show error toast for missing backend
             }
         }
 
@@ -78,14 +78,14 @@ const ShopContextProvider = (props) => {
 
         setCartItems(cartData)
 
-        if (token) {
+        if (token && backendUrl) {
             try {
 
                 await axios.post(backendUrl + '/api/cart/update', { itemId, size, quantity }, { headers: { token } })
 
             } catch (error) {
-                console.log(error)
-                toast.error(error.message)
+                console.log('Backend not available for cart update:', error.message)
+                // Don't show error toast for missing backend
             }
         }
 
@@ -110,6 +110,12 @@ const ShopContextProvider = (props) => {
 
     const getProductsData = async () => {
         try {
+            // If no backend URL is set, use mock data
+            if (!backendUrl) {
+                console.log('No backend URL set, using mock data');
+                setProducts([]);
+                return;
+            }
 
             const response = await axios.get(backendUrl + '/api/product/list')
             if (response.data.success) {
@@ -119,21 +125,27 @@ const ShopContextProvider = (props) => {
             }
 
         } catch (error) {
-            console.log(error)
-            toast.error(error.message)
+            console.log('Backend not available, using mock data:', error.message)
+            // Don't show error toast for missing backend, just use empty products
+            setProducts([]);
         }
     }
 
     const getUserCart = async ( token ) => {
         try {
+            // If no backend URL is set, skip cart fetching
+            if (!backendUrl) {
+                console.log('No backend URL set, skipping cart fetch');
+                return;
+            }
             
             const response = await axios.post(backendUrl + '/api/cart/get',{},{headers:{token}})
             if (response.data.success) {
                 setCartItems(response.data.cartData)
             }
         } catch (error) {
-            console.log(error)
-            toast.error(error.message)
+            console.log('Backend not available for cart:', error.message)
+            // Don't show error toast for missing backend
         }
     }
 
