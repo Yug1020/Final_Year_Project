@@ -20,7 +20,8 @@ import stripe_logo from './stripe_logo.png'
 import cross_icon from './cross_icon.png'
 import harvard from "./harvard.jpg";
 import stanford from "./stanford.png"
-
+import coach from "./coach.png"
+import consultant from "./consultant.png"
 
 export const assets = {
     logo,
@@ -42,7 +43,9 @@ export const assets = {
     stripe_logo,
     cross_icon,
     harvard,
-    stanford
+    stanford,
+    coach,
+    consultant
 }
 
 export default assets;

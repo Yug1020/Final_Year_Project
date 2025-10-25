@@ -6,19 +6,19 @@ const OurPolicy = () => {
     <div className='flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 text-center py-20 text-xs sm:text-sm md:text-base text-gray-700'>
       
       <div>
-        <img src={assets.exchange_icon} className='w-12 m-auto mb-5' alt="" />
-        <p className=' font-semibold'>Easy Exchange Policy</p>
-        <p className=' text-gray-400'>We offer hassle free  exchange policy</p>
+        <img src={assets.coach} className='w-7 m-auto mb-5' alt="" />
+        <p className=' font-semibold'>Expert Guidance from Top University Mentors</p>
+        <p className=' text-gray-400'>Our mentors have successfully navigated the admissions process for elite universities like Harvard, Stanford, and Princeton. They offer firsthand insights, ensuring top-quality mentorship.</p>
       </div>
       <div>
-        <img src={assets.quality_icon} className='w-12 m-auto mb-5' alt="" />
-        <p className=' font-semibold'>7 Days Return Policy</p>
-        <p className=' text-gray-400'>We provide 7 days free return policy</p>
+        <img src={assets.support_img} className='w-7 m-auto mb-5' alt="" />
+        <p className=' font-semibold'>Personalized Support Tailored to Teens</p>
+        <p className=' text-gray-400'>Our mentors were in your shoes just a few years back. They understand you and will be your elder siblings through this process.</p>
       </div>
       <div>
-        <img src={assets.support_img} className='w-12 m-auto mb-5' alt="" />
-        <p className=' font-semibold'>Best customer support</p>
-        <p className=' text-gray-400'>we provide 24/7 customer support</p>
+        <img src={assets.consultant} className='w-7 m-auto mb-5' alt="" />
+        <p className=' font-semibold'>Committed Mentors Who Go the Extra Mile</p>
+        <p className=' text-gray-400'>Our mentors have assisted our students in building passion projects, writing essays, getting a good grade on their calculus test, landing internships, landing podcast guests, getting a good SAT score and so much more.</p>
       </div>
 
     </div>
@@ -26,3 +26,6 @@ const OurPolicy = () => {
 }
 
 export default OurPolicy
+
+
+

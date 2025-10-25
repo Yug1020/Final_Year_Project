@@ -56,11 +56,8 @@ const MentorsSection = () => {
   const rowB = filteredMentors.filter((_, i) => i % 2 === 1);
 
   return (
-    <section id="mentors" className="py-20 bg-white">
+    <section id="mentors" className="py-20 bg-black">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-center text-4xl font-bold mb-10 text-gray-800">
-          Find Your Perfect Mentor
-        </h2>
 
         {/* 🔍 Search */}
         <div className="flex justify-center mb-10">
