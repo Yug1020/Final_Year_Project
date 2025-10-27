@@ -38,7 +38,7 @@
 
 import React from "react";
 import Title from "./Title";
-import MentorsSection from "./MentorsSection";
+// import MentorsSection from "./MentorsSection";
 import UniversitySlider from "./UniversitySlider";
 
 const BestSeller = () => {
