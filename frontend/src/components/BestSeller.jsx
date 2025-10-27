@@ -39,18 +39,28 @@
 import React from "react";
 import Title from "./Title";
 import MentorsSection from "./MentorsSection";
+import UniversitySlider from "./UniversitySlider";
 
 const BestSeller = () => {
   return (
-    <div className="my-10">
-      <div className="text-center text-3xl py-8">
-        <Title text1="BEST" text2="MENTORS" />
-        <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-          Looking to apply abroad for a master's? Our students will guide you through every step.
-        </p>
+<div className='my-10'>
+      <div className='text-center py-8 text-3xl'>
+          <Title text1={'TOP'} text2={'UNIVERSITIES'} />
+          <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
+          Discover Your Dream Study Abroad Destination
+          </p>
       </div>
 
-      <MentorsSection />
+      {/* Rendering Products */}
+      {/* <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 my-6'>
+        {products.slice(0,4).map((item,index)=>(
+          <ProductItem key={index} id={item._id} image={item.image} name={item.name} price={item.price} />
+        ))}
+      </div> */}
+      
+      {/* Slide show */}
+      <UniversitySlider />
+
     </div>
   );
 };
