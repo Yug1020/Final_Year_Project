@@ -6,17 +6,17 @@ const MentorsSection = () => {
 
   // ✅ Fetch mentors.json from public/data/Mentors/
   useEffect(() => {
-  fetch("/data/Mentors/mentors.json")
-    .then((res) => {
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-      return res.json();
-    })
-    .then((data) => {
-      console.log("✅ Mentors loaded:", data);
-      setMentorsData(data);
-    })
-    .catch((err) => console.error("❌ Error loading mentors:", err));
-}, []);
+    fetch("/data/Mentors/mentors.json")
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        console.log("✅ Mentors loaded:", data);
+        setMentorsData(data);
+      })
+      .catch((err) => console.error("❌ Error loading mentors:", err));
+  }, []);
 
   const allMentors = mentorsData?.mentors || [];
 
@@ -40,12 +40,10 @@ const MentorsSection = () => {
 
   const getPhotoSrc = (photoPath) => {
     if (!photoPath) return "";
-    // If photoPath is already just a filename, use it directly
-    if (!photoPath.includes('/') && !photoPath.includes('\\')) {
+    if (!photoPath.includes("/") && !photoPath.includes("\\")) {
       const src = `/data/Mentors/Photos.master/${encodeURIComponent(photoPath)}`;
       return src;
     }
-    // If it's a full path, extract the filename
     const parts = photoPath.split(/[\\/]/);
     const filename = parts[parts.length - 1];
     const src = `/data/Mentors/Photos.master/${encodeURIComponent(filename)}`;
@@ -58,7 +56,6 @@ const MentorsSection = () => {
   return (
     <section id="mentors" className="py-20 bg-black">
       <div className="max-w-6xl mx-auto px-4">
-
         {/* 🔍 Search */}
         <div className="flex justify-center mb-10">
           <input
@@ -83,7 +80,8 @@ const MentorsSection = () => {
                   alt={mentor.name}
                   className="w-[90%] h-[220px] object-cover rounded-xl mx-auto mt-4"
                   onError={(e) => {
-                    e.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9Ijc1IiByPSIzMCIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNNTAgMTUwQzUwIDEyNSA3NSAxMDAgMTAwIDEwMEMxMjUgMTAwIDE1MCAxMjUgMTUwIDE1MFYxNzBINTAgVjE1MFoiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+';
+                    e.target.src =
+                      "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgdmlld0JveD0iMCAwIDIwMCAyMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIyMDAiIGhlaWdodD0iMjAwIiBmaWxsPSIjRjNGNEY2Ii8+CjxjaXJjbGUgY3g9IjEwMCIgY3k9Ijc1IiByPSIzMCIgZmlsbD0iIzlDQTNBRiIvPgo8cGF0aCBkPSJNNTAgMTUwQzUwIDEyNSA3NSAxMDAgMTAwIDEwMEMxMjUgMTAwIDE1MCAxMjUgMTUwIDE1MFYxNzBINTAgVjE1MFoiIGZpbGw9IiM5Q0EzQUYiLz4KPC9zdmc+";
                     e.target.onerror = null;
                   }}
                 />
@@ -93,9 +91,7 @@ const MentorsSection = () => {
                     {mentor.university}
                   </p>
                   <p className="text-gray-500">{mentor.country}</p>
-                  <button className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-2 rounded-full hover:scale-105 transition-transform mt-3">
-                    Connect
-                  </button>
+                  <button className="connect-btn mt-3">Connect</button>
                 </div>
               </div>
             ))}
@@ -114,7 +110,8 @@ const MentorsSection = () => {
                     alt={mentor.name}
                     className="w-[90%] h-[220px] object-cover rounded-xl mx-auto mt-4"
                     onError={(e) => {
-                      e.target.src = '/data/Mentors/Photos.master/default-avatar.png';
+                      e.target.src =
+                        "/data/Mentors/Photos.master/default-avatar.png";
                       e.target.onerror = null;
                     }}
                   />
@@ -123,6 +120,7 @@ const MentorsSection = () => {
                     <p className="text-indigo-500 font-medium">
                       {mentor.university}
                     </p>
+                    <button className="connect-btn mt-3">Connect</button>
                   </div>
                 </div>
               ))}
@@ -139,7 +137,8 @@ const MentorsSection = () => {
                     alt={mentor.name}
                     className="w-[90%] h-[220px] object-cover rounded-xl mx-auto mt-4"
                     onError={(e) => {
-                      e.target.src = '/data/Mentors/Photos.master/default-avatar.png';
+                      e.target.src =
+                        "/data/Mentors/Photos.master/default-avatar.png";
                       e.target.onerror = null;
                     }}
                   />
@@ -148,6 +147,7 @@ const MentorsSection = () => {
                     <p className="text-indigo-500 font-medium">
                       {mentor.university}
                     </p>
+                    <button className="connect-btn mt-3">Connect</button>
                   </div>
                 </div>
               ))}
@@ -172,6 +172,21 @@ const MentorsSection = () => {
           }
           .animate-scroll-reverse {
             animation: scroll-reverse 35s linear infinite;
+          }
+
+          /* ⬇️ Added Code 2 button CSS */
+          .connect-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+          }
+          .connect-btn:hover {
+            transform: translateY(-2px);
           }
         `}
       </style>
