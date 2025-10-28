@@ -20,32 +20,30 @@ const ShopContextProvider = (props) =>
 
 
     const addToCart = async (itemId, size) => {
-
-        if (!size) {
-            toast.error('Select Product Size');
-            return;
-        }
+        // When no size is provided, use a default key so size selection isn't required
+        const normalizedSize = size || 'default';
 
         let cartData = structuredClone(cartItems);
 
         if (cartData[itemId]) {
-            if (cartData[itemId][size]) {
-                cartData[itemId][size] += 1;
+            if (cartData[itemId][normalizedSize]) {
+                cartData[itemId][normalizedSize] += 1;
             }
             else {
-                cartData[itemId][size] = 1;
+                cartData[itemId][normalizedSize] = 1;
             }
         }
         else {
             cartData[itemId] = {};
-            cartData[itemId][size] = 1;
+            cartData[itemId][normalizedSize] = 1;
         }
         setCartItems(cartData);
+        toast.success('Session In Schedule');
 
         if (token && backendUrl) {
             try {
 
-                await axios.post(backendUrl + '/api/cart/add', { itemId, size }, { headers: { token } })
+                await axios.post(backendUrl + '/api/cart/add', { itemId, size: normalizedSize }, { headers: { token } })
 
             } catch (error) {
                 console.log('Backend not available for cart add:', error.message)

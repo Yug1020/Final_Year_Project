@@ -12,7 +12,6 @@ const Product = () => {
   const { products, currency ,addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState('')
-  const [showAR, setShowAR] = useState(false);
   const [similarSizeProducts, setSimilarSizeProducts] = useState([]);
 
   const fetchProductData = async () => {
@@ -27,9 +26,7 @@ const Product = () => {
 
   }
 
-  const handleARView = () => {
-    setShowAR(!showAR);
-  }
+  // AR view removed per new design
 
   useEffect(() => {
     fetchProductData();
@@ -53,17 +50,10 @@ const Product = () => {
       {/*----------- Product Data-------------- */}
       <div className='flex gap-12 sm:gap-12 flex-col sm:flex-row'>
 
-        {/*---------- Product Images------------- */}
-        <div className='flex-1 flex flex-col-reverse gap-3 sm:flex-row'>
-          <div className='flex sm:flex-col overflow-x-auto sm:overflow-y-scroll justify-between sm:justify-normal sm:w-[18.7%] w-full'>
-              {
-                productData.image.map((item,index)=>(
-                  <img onClick={()=>setImage(item)} src={item} key={index} className='w-[24%] sm:w-full sm:mb-3 flex-shrink-0 cursor-pointer' alt="" />
-                ))
-              }
-          </div>
-          <div className='w-full sm:w-[80%]'>
-              <img className='w-full h-auto' src={image} alt="" />
+        {/*---------- Product Image (single) ------------- */}
+        <div className='flex-1'>
+          <div className='w-full'>
+            <img className='w-full h-auto rounded-lg' src={image || productData.image[0]} alt={productData.name} />
           </div>
         </div>
 
@@ -82,15 +72,8 @@ const Product = () => {
           <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
           
           <div className='flex gap-4 mt-8'>
-            <button onClick={()=>addToCart(productData._id, productData.sizes[0])} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
-            <button onClick={handleARView} className='border border-black px-8 py-3 text-sm hover:bg-gray-100'>VIEW IN AR</button>
+            <button onClick={()=>addToCart(productData._id)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
           </div>
-          
-          {showAR && (
-            <div className='mt-6 border border-gray-300 rounded p-4 md:w-4/5 h-[300px] flex items-center justify-center bg-gray-50'>
-              <p className='text-gray-500 text-center'>AR View placeholder - Furniture visualization would appear here</p>
-            </div>
-          )}
           
           <hr className='mt-8 sm:w-4/5' />
           <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
@@ -101,16 +84,10 @@ const Product = () => {
         </div>
       </div>
 
-      {/* ---------- Description & Review Section ------------- */}
-      <div className='mt-20'>
-        <div className='flex'>
-          <b className='border px-5 py-3 text-sm'>Description</b>
-          <p className='border px-5 py-3 text-sm'>Reviews (122)</p>
-        </div>
-        <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500'>
-          <p>An e-commerce website is an online platform that facilitates the buying and selling of products or services over the internet. It serves as a virtual marketplace where businesses and individuals can showcase their products, interact with customers, and conduct transactions without the need for a physical presence. E-commerce websites have gained immense popularity due to their convenience, accessibility, and the global reach they offer.</p>
-          <p>E-commerce websites typically display products or services along with detailed descriptions, images, prices, and any available variations (e.g., sizes, colors). Each product usually has its own dedicated page with relevant information.</p>
-        </div>
+      {/* ---------- Description Section ------------- */}
+      <div className='mt-12 md:w-4/5'>
+        <h2 className='text-lg font-semibold mb-3'>About</h2>
+        <p className='text-sm text-gray-600 leading-6'>{productData.description}</p>
       </div>
 
       {/* --------- display related products ---------- */}
