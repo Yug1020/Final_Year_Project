@@ -5,7 +5,8 @@ import axios from 'axios'
 
 export const ShopContext = createContext();
 
-const ShopContextProvider = (props) => {
+const ShopContextProvider = (props) => 
+    {
 
     const currency = '₹';
     const delivery_fee = 10;
@@ -64,7 +65,7 @@ const ShopContextProvider = (props) => {
                     }
                 } catch (error) {
 
-                }
+                } 
             }
         }
         return totalCount;
