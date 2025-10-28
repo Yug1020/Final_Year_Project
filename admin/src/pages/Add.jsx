@@ -14,25 +14,53 @@ const Add = ({token}) => {
    const [name, setName] = useState("");
    const [description, setDescription] = useState("");
    const [price, setPrice] = useState("");
-   const [category, setCategory] = useState("Men");
-   const [subCategory, setSubCategory] = useState("Topwear");
-   const [bestseller, setBestseller] = useState(false);
-   const [sizes, setSizes] = useState([]);
+   // Backend requires these fields; use sensible defaults for mentor entity
+   const [category] = useState("Mentor");
+   const [subCategory] = useState("General");
+   const [sizes] = useState([]); // not used for mentors, but required by backend
+   const [bestseller] = useState(false);
+   const [availability, setAvailability] = useState([
+     { day: "Monday", start: "09:00", end: "10:00" }
+   ]);
+
+   const addAvailabilitySlot = () => {
+     setAvailability(prev => [
+       ...prev,
+       { day: "Monday", start: "09:00", end: "10:00" }
+     ]);
+   };
+
+   const updateAvailabilitySlot = (index, field, value) => {
+     setAvailability(prev => {
+       const copy = [...prev];
+       copy[index] = { ...copy[index], [field]: value };
+       return copy;
+     });
+   };
+
+   const removeAvailabilitySlot = (index) => {
+     setAvailability(prev => prev.filter((_, i) => i !== index));
+   };
 
    const onSubmitHandler = async (e) => {
     e.preventDefault();
 
     try {
+     if (!image1) {
+       toast.error("Please upload an image");
+       return;
+     }
       
       const formData = new FormData()
 
       formData.append("name",name)
       formData.append("description",description)
       formData.append("price",price)
-      formData.append("category",category)
-      formData.append("subCategory",subCategory)
-      formData.append("bestseller",bestseller)
-      formData.append("sizes",JSON.stringify(sizes))
+     formData.append("category", category)
+     formData.append("subCategory", subCategory)
+     formData.append("sizes", JSON.stringify(sizes))
+     formData.append("bestseller", String(bestseller))
+      formData.append("availability", JSON.stringify(availability))
 
       image1 && formData.append("image1",image1)
       // image2 && formData.append("image2",image2)
@@ -46,10 +74,8 @@ const Add = ({token}) => {
         setName('')
         setDescription('')
         setImage1(false)
-        // setImage2(false)
-        // setImage3(false)
-        // setImage4(false)
         setPrice('')
+        setAvailability([{ day: "Monday", start: "09:00", end: "10:00" }])
       } else {
         toast.error(response.data.message)
       }
@@ -95,41 +121,73 @@ const Add = ({token}) => {
           <textarea onChange={(e)=>setDescription(e.target.value)} value={description} className='w-full max-w-[500px] px-3 py-2' type="text" placeholder='Write content here' required/>
         </div>
 
-        <div className='flex flex-col sm:flex-row gap-2 w-full sm:gap-8'>
+        <div className='flex flex-col w-full gap-4 sm:gap-6'>
+          <div>
+            <p className='mb-2'>Session Charges</p>
+            <input onChange={(e) => setPrice(e.target.value)} value={price} className='w-full px-3 py-2 sm:w-[120px]' type="number" placeholder='25' />
+          </div>
 
-            <div>
-              <p className='mb-2'>Product category</p>
-              <select onChange={(e) => setCategory(e.target.value)} className='w-full px-3 py-2'>
-                  <option value="Furnitures">Furnitures</option>
-                  <option value="Textures">Textures</option>
-                  <option value="Home Decor">Home Decor</option>
-              </select>
+          <div className='w-full'>
+            <p className='mb-2'>Mentor Availability</p>
+            <div className='flex flex-col gap-3'>
+              {availability.map((slot, index) => (
+                <div key={index} className='flex flex-col sm:flex-row gap-2 sm:items-end'>
+                  <div>
+                    <p className='mb-2'>Day</p>
+                    <select
+                      value={slot.day}
+                      onChange={(e) => updateAvailabilitySlot(index, 'day', e.target.value)}
+                      className='w-full px-3 py-2'
+                    >
+                      <option value="Monday">Monday</option>
+                      <option value="Tuesday">Tuesday</option>
+                      <option value="Wednesday">Wednesday</option>
+                      <option value="Thursday">Thursday</option>
+                      <option value="Friday">Friday</option>
+                      <option value="Saturday">Saturday</option>
+                      <option value="Sunday">Sunday</option>
+                    </select>
+                  </div>
+                  <div>
+                    <p className='mb-2'>Start</p>
+                    <input
+                      type='time'
+                      value={slot.start}
+                      onChange={(e) => updateAvailabilitySlot(index, 'start', e.target.value)}
+                      className='w-full px-3 py-2'
+                    />
+                  </div>
+                  <div>
+                    <p className='mb-2'>End</p>
+                    <input
+                      type='time'
+                      value={slot.end}
+                      onChange={(e) => updateAvailabilitySlot(index, 'end', e.target.value)}
+                      className='w-full px-3 py-2'
+                    />
+                  </div>
+                  <button
+                    type='button'
+                    onClick={() => removeAvailabilitySlot(index)}
+                    className='px-3 py-2 bg-red-500 text-white'
+                  >
+                    Remove
+                  </button>
+                </div>
+              ))}
+              <button
+                type='button'
+                onClick={addAvailabilitySlot}
+                className='w-fit px-4 py-2 bg-gray-200'
+              >
+                + Add another time slot
+              </button>
             </div>
-
-            <div>
-              <p className='mb-2'>Sub category</p>
-              <select onChange={(e) => setSubCategory(e.target.value)} className='w-full px-3 py-2'>
-                  <option value="Seating Furniture">Seating Furniture</option>
-                  <option value="Storage Furniture">Storage Furniture</option>
-                  <option value="Tables">Tables</option>
-                  <option value="Lamps">Lamps</option>
-                  <option value="Wall Textures">Wall Textures</option>
-                  <option value="Floor Textures">Floor Textures</option>
-              </select>
-            </div>
-
-            <div>
-              <p className='mb-2'>Session Charges</p>
-              <input onChange={(e) => setPrice(e.target.value)} value={price} className='w-full px-3 py-2 sm:w-[120px]' type="Number" placeholder='25' />
-            </div>
-
+          </div>
         </div>
 
 
-        <div className='flex gap-2 mt-2'>
-          <input onChange={() => setBestseller(prev => !prev)} checked={bestseller} type="checkbox" id='bestseller' />
-          <label className='cursor-pointer' htmlFor="bestseller">Add to bestseller</label>
-        </div>
+        
 
         <button type="submit" className='w-28 py-3 mt-4 bg-black text-white'>ADD MENTOR</button>
 
