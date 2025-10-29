@@ -81,35 +81,35 @@ const Product = () => {
           {/* CTAs removed per request */}
           
           <div className='flex gap-4 mt-8'>
-            <button onClick={()=>addToCart(productData._id)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
+            <button onClick={()=>addToCart(productData._id)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>Book Session</button>
           </div>
           
           <hr className='mt-8 sm:w-4/5' />
-          <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
+          {/* <div className='text-sm text-gray-500 mt-5 flex flex-col gap-1'>
               <p>100% Original product.</p>
               <p>Cash on delivery is available on this product.</p>
               <p>Easy return and exchange policy within 7 days.</p>
-          </div>
+          </div> */}
         </div>
       </div>
 
       {/* ---------- Description Section (removed per request) ------------- */}
 
-      <div className='mt-6 md:w-4/5'>
+      {/* <div className='mt-6 md:w-4/5'>
         <button
           onClick={() => { addToCart(productData._id); navigate('/place-order'); }}
           className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700 rounded'
         >
           Book Session
         </button>
-      </div>
+      </div> */}
 
       {/* --------- display related products ---------- */}
 
-      <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
+      {/* <RelatedProducts category={productData.category} subCategory={productData.subCategory} /> */}
 
       {/* --------- display products with similar sizes ---------- */}
-      {similarSizeProducts.length > 0 && (
+      {/* {similarSizeProducts.length > 0 && (
         <div className='my-24'>
           <div className='text-center text-3xl py-2'>
             <Title text1={'SIMILAR'} text2={'SIZES'} />
@@ -144,7 +144,8 @@ const Product = () => {
             </div>
           </div>
         </div>
-      )}
+      )
+      } */}
     </div>
   ) : <div className=' opacity-0'></div>
 }
