@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { ShopContext } from '../context/ShopContext'
 import Title from '../components/Title';
 import ProductItem from '../components/ProductItem';
@@ -7,14 +8,23 @@ const Collection = () => {
 
   const { products , search , showSearch } = useContext(ShopContext);
   const [filterProducts,setFilterProducts] = useState([]);
+  const location = useLocation();
 
   useEffect(()=>{
     let productsCopy = products.slice();
+    // search filter, if active
     if (showSearch && search) {
       productsCopy = productsCopy.filter(item => item.name.toLowerCase().includes(search.toLowerCase()))
     }
+    // country filter from query param
+    const params = new URLSearchParams(location.search);
+    const country = params.get('country');
+    if (country) {
+      const countryLower = country.toLowerCase();
+      productsCopy = productsCopy.filter(item => (item.mastersCountry || '').toLowerCase() === countryLower)
+    }
     setFilterProducts(productsCopy)
-  },[search,showSearch,products])
+  },[search,showSearch,products,location.search])
 
   return (
     <div className='pt-10 border-t'>

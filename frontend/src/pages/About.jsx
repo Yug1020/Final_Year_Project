@@ -1,9 +1,10 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import Title from '../components/Title'
-import NewsletterBox from '../components/NewsletterBox'
 import { assets } from '../assets/assets'
 
 const About = () => {
+  const navigate = useNavigate();
   return (
     <div>
 
@@ -23,7 +24,7 @@ const About = () => {
               <li>3 year stayback</li>
               <li>4% Unemployment Rate</li>
             </ul>
-            <button className='mt-4 w-full border border-rose-300 text-rose-600 hover:bg-rose-50 rounded-md py-2 text-sm'>Learn More</button>
+            <button onClick={()=>navigate('/collection?country=USA')} className='mt-4 w-full border border-rose-300 text-rose-600 hover:bg-rose-50 rounded-md py-2 text-sm'>Learn More</button>
           </div>
         </div>
 
@@ -39,7 +40,7 @@ const About = () => {
               <li>2 year stayback</li>
               <li>4.5% Unemployment Rate</li>
             </ul>
-            <button className='mt-4 w-full border border-rose-300 text-rose-600 hover:bg-rose-50 rounded-md py-2 text-sm'>Learn More</button>
+            <button onClick={()=>navigate('/collection?country=United%20Kingdom')} className='mt-4 w-full border border-rose-300 text-rose-600 hover:bg-rose-50 rounded-md py-2 text-sm'>Learn More</button>
           </div>
         </div>
 
@@ -55,7 +56,7 @@ const About = () => {
               <li>18 months stayback</li>
               <li>3% Unemployment Rate</li>
             </ul>
-            <button className='mt-4 w-full border border-rose-300 text-rose-600 hover:bg-rose-50 rounded-md py-2 text-sm'>Learn More</button>
+            <button onClick={()=>navigate('/collection?country=Germany')} className='mt-4 w-full border border-rose-300 text-rose-600 hover:bg-rose-50 rounded-md py-2 text-sm'>Learn More</button>
           </div>
         </div>
 
@@ -71,14 +72,11 @@ const About = () => {
               <li>3 year stayback</li>
               <li>4.5% Unemployment Rate</li>
             </ul>
-            <button className='mt-4 w-full border border-rose-300 text-rose-600 hover:bg-rose-50 rounded-md py-2 text-sm'>Learn More</button>
+            <button onClick={()=>navigate('/collection?country=New%20Zealand')} className='mt-4 w-full border border-rose-300 text-rose-600 hover:bg-rose-50 rounded-md py-2 text-sm'>Learn More</button>
           </div>
         </div>
       </div>
 
-      <div className='my-16'>
-        <NewsletterBox />
-      </div>
     </div>
   )
 }
