@@ -15,6 +15,7 @@ const Add = ({token}) => {
    const [description, setDescription] = useState("");
    const [details, setDetails] = useState("");
    const [price, setPrice] = useState("");
+   const [mastersCountry, setMastersCountry] = useState("");
    // Backend requires these fields; use sensible defaults for mentor entity
    const [category] = useState("Mentor");
    const [subCategory] = useState("General");
@@ -62,6 +63,7 @@ const Add = ({token}) => {
      formData.append("sizes", JSON.stringify(sizes))
      formData.append("bestseller", String(bestseller))
      formData.append("details", details)
+     formData.append("mastersCountry", mastersCountry)
       formData.append("availability", JSON.stringify(availability))
 
       image1 && formData.append("image1",image1)
@@ -78,6 +80,7 @@ const Add = ({token}) => {
        setImage1(false)
         setPrice('')
        setDetails('')
+        setMastersCountry('')
         setAvailability([{ day: "Monday", start: "09:00", end: "10:00" }])
       } else {
         toast.error(response.data.message)
@@ -133,6 +136,17 @@ const Add = ({token}) => {
           <div>
             <p className='mb-2'>Session Charges</p>
             <input onChange={(e) => setPrice(e.target.value)} value={price} className='w-full px-3 py-2 sm:w-[120px]' type="number" placeholder='25' />
+          </div>
+
+          <div className='w-full'>
+            <p className='mb-2'>Masters Country</p>
+            <select onChange={(e)=>setMastersCountry(e.target.value)} value={mastersCountry} className='w-full max-w-[500px] px-3 py-2'>
+              <option value="">Select Country</option>
+              <option value="USA">USA</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Germany">Germany</option>
+              <option value="New Zealand">New Zealand</option>
+            </select>
           </div>
 
           <div className='w-full'>
