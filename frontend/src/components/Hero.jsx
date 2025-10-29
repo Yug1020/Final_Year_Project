@@ -1,4 +1,5 @@
 import React from "react";
+import { assets } from "../assets/assets";
 
 const Hero = () => {
   return (
@@ -30,6 +31,36 @@ const Hero = () => {
         50% { transform: translateY(-20px); }
       }
     `}</style>
+
+    {/* Left stacked cards */}
+    <div className="hidden lg:block absolute left-[30px] top-10">
+      <div className="relative w-[220px] h-[550px]">
+        <div className="absolute top-0 left-6 rotate-[-12deg] bg-[#fde047] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+          <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
+            <img src={assets.coach} alt="mentor" className="w-full h-full object-cover" />
+          </div>
+          <p className="text-[14px] leading-5 font-semibold">
+            Chandan helps people get into podcasting
+          </p>
+        </div>
+        <div className="absolute top-44 left-0 rotate-[12deg] bg-[#bfdbfe] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+          <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
+            <img src={assets.consultant} alt="mentor" className="w-full h-full object-cover" />
+          </div>
+          <p className="text-[14px] leading-5 font-semibold">
+            Dyumna helps you build your personal brand!
+          </p>
+        </div>
+        <div className="absolute bottom-0 left-10 rotate-[20deg] bg-[#fbcfe8] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+          <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
+            <img src={assets.harvard} alt="mentor" className="w-full h-full object-cover" />
+          </div>
+          <p className="text-[14px] leading-5 font-semibold">
+            Mark helps you produce your song!
+          </p>
+        </div>
+      </div>
+    </div>
     <div
       className="relative flex justify-center items-center group" // group enables container hover
     >
@@ -88,6 +119,36 @@ const Hero = () => {
         </svg>
         <div className="absolute bottom-0 w-full h-10 bg-white/5 flex justify-center items-center text-white">
           Earn
+        </div>
+      </div>
+    </div>
+
+    {/* Right stacked cards */}
+    <div className="hidden lg:block absolute right-[30px] top-8">
+      <div className="relative w-[220px] h-[520px]">
+        <div className="absolute top-0 right-6 rotate-[14deg] bg-[#fbcfe8] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+          <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
+            <img src={assets.stanford} alt="mentor" className="w-full h-full object-cover" />
+          </div>
+          <p className="text-[14px] leading-5 font-semibold">
+            Hafsa helps you apply to Princeton
+          </p>
+        </div>
+        <div className="absolute top-44 right-2 rotate-[-10deg] bg-[#bfdbfe] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+          <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
+            <img src={assets.coach} alt="mentor" className="w-full h-full object-cover" />
+          </div>
+          <p className="text-[14px] leading-5 font-semibold">
+            Karthik helps you build AI tools
+          </p>
+        </div>
+        <div className="absolute bottom-0 right-8 rotate-[-20deg] bg-[#fde047] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+          <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
+            <img src={assets.consultant} alt="mentor" className="w-full h-full object-cover" />
+          </div>
+          <p className="text-[14px] leading-5 font-semibold">
+            Shreyans helps you build your startup
+          </p>
         </div>
       </div>
     </div>
