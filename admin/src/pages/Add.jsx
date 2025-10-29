@@ -13,6 +13,7 @@ const Add = ({token}) => {
 
    const [name, setName] = useState("");
    const [description, setDescription] = useState("");
+   const [details, setDetails] = useState("");
    const [price, setPrice] = useState("");
    // Backend requires these fields; use sensible defaults for mentor entity
    const [category] = useState("Mentor");
@@ -60,6 +61,7 @@ const Add = ({token}) => {
      formData.append("subCategory", subCategory)
      formData.append("sizes", JSON.stringify(sizes))
      formData.append("bestseller", String(bestseller))
+     formData.append("details", details)
       formData.append("availability", JSON.stringify(availability))
 
       image1 && formData.append("image1",image1)
@@ -73,8 +75,9 @@ const Add = ({token}) => {
         toast.success(response.data.message)
         setName('')
         setDescription('')
-        setImage1(false)
+       setImage1(false)
         setPrice('')
+       setDetails('')
         setAvailability([{ day: "Monday", start: "09:00", end: "10:00" }])
       } else {
         toast.error(response.data.message)
@@ -119,6 +122,11 @@ const Add = ({token}) => {
         <div className='w-full'>
           <p className='mb-2'>Mentor's Achievement</p>
           <textarea onChange={(e)=>setDescription(e.target.value)} value={description} className='w-full max-w-[500px] px-3 py-2' type="text" placeholder='Write content here' required/>
+        </div>
+
+        <div className='w-full'>
+          <p className='mb-2'>Mentor's Detail</p>
+          <textarea onChange={(e)=>setDetails(e.target.value)} value={details} className='w-full max-w-[500px] px-3 py-2' type="text" placeholder='Add extra details (qualifications, experience, etc.)' />
         </div>
 
         <div className='flex flex-col w-full gap-4 sm:gap-6'>

@@ -90,6 +90,13 @@ const Product = () => {
         <p className='text-sm text-gray-600 leading-6'>{productData.description}</p>
       </div>
 
+      {productData.details && (
+        <div className='mt-8 md:w-4/5'>
+          <h2 className='text-lg font-semibold mb-3'>Mentor's Detail</h2>
+          <p className='text-sm text-gray-700 leading-6 whitespace-pre-line'>{productData.details}</p>
+        </div>
+      )}
+
       {/* --------- display related products ---------- */}
 
       <RelatedProducts category={productData.category} subCategory={productData.subCategory} />
