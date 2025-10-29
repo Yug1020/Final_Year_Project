@@ -29,7 +29,7 @@ const Collection = () => {
   return (
     <div className='pt-10 border-t'>
       <div className='flex justify-between items-center text-base sm:text-2xl mb-4'>
-        <Title text1={'ALL'} text2={'COLLECTIONS'} />
+        <Title text1={'BEST'} text2={'MENTORS'} />
       </div>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
         {
