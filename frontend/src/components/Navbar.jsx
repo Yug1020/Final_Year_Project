@@ -40,7 +40,7 @@ const Navbar = () => {
             <p>Browse Mentors</p>
         </NavLink>
         <NavLink to='/about' className="relative text-[#2c3e50] no-underline font-medium transition-colors duration-300 ease-in-out hover:text-[#667eea] after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#667eea] after:to-[#764ba2] after:transition-all after:duration-300 after:ease-in-out hover:after:w-full flex flex-col items-center gap-1">
-            <p>Top Universities</p>
+            <p>Top Countries</p>
         </NavLink>
         <NavLink to='/contact' className="relative text-[#2c3e50] no-underline font-medium transition-colors duration-300 ease-in-out hover:text-[#667eea] after:content-[''] after:absolute after:bottom-[-5px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-[#667eea] after:to-[#764ba2] after:transition-all after:duration-300 after:ease-in-out hover:after:w-full flex flex-col items-center gap-1">
             <p>About Us</p>

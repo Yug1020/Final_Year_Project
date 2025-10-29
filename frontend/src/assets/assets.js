@@ -22,6 +22,10 @@ import harvard from "./harvard.jpg";
 import stanford from "./stanford.png"
 import coach from "./coach.png"
 import consultant from "./consultant.png"
+import Germany from "./Germany.png"
+import UK from "./UK.png"
+import USA from "./USA.png"
+import new_zealand from "./new_zealand.png"
 
 export const assets = {
     logo,
@@ -45,7 +49,11 @@ export const assets = {
     harvard,
     stanford,
     coach,
-    consultant
+    consultant,
+    Germany,
+    UK,
+    USA,
+    new_zealand
 }
 
 export default assets;
