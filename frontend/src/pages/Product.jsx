@@ -9,7 +9,7 @@ import Title from '../components/Title';
 const Product = () => {
 
   const { productId } = useParams();
-  const { products, currency ,addToCart } = useContext(ShopContext);
+  const { products, currency } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState('')
   const [similarSizeProducts, setSimilarSizeProducts] = useState([]);
@@ -70,6 +70,15 @@ const Product = () => {
           </div>
           <p className='mt-5 text-3xl font-medium'>{currency}{productData.price}</p>
           <p className='mt-5 text-gray-500 md:w-4/5'>{productData.description}</p>
+
+          {productData.details && (
+            <div className='mt-6'>
+              <h2 className='text-lg font-semibold mb-3'>Mentor's Detail</h2>
+              <p className='text-sm text-gray-700 leading-6 whitespace-pre-line md:w-4/5'>{productData.details}</p>
+            </div>
+          )}
+
+          {/* CTAs removed per request */}
           
           <div className='flex gap-4 mt-8'>
             <button onClick={()=>addToCart(productData._id)} className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700'>ADD TO CART</button>
@@ -84,18 +93,16 @@ const Product = () => {
         </div>
       </div>
 
-      {/* ---------- Description Section ------------- */}
-      <div className='mt-12 md:w-4/5'>
-        <h2 className='text-lg font-semibold mb-3'>About</h2>
-        <p className='text-sm text-gray-600 leading-6'>{productData.description}</p>
-      </div>
+      {/* ---------- Description Section (removed per request) ------------- */}
 
-      {productData.details && (
-        <div className='mt-8 md:w-4/5'>
-          <h2 className='text-lg font-semibold mb-3'>Mentor's Detail</h2>
-          <p className='text-sm text-gray-700 leading-6 whitespace-pre-line'>{productData.details}</p>
-        </div>
-      )}
+      <div className='mt-6 md:w-4/5'>
+        <button
+          onClick={() => { addToCart(productData._id); navigate('/place-order'); }}
+          className='bg-black text-white px-8 py-3 text-sm active:bg-gray-700 rounded'
+        >
+          Book Session
+        </button>
+      </div>
 
       {/* --------- display related products ---------- */}
 
