@@ -37,26 +37,26 @@ const Hero = () => {
       <div className="relative w-[220px] h-[550px]">
         <div className="absolute top-[0px] left-6 rotate-[-7deg] bg-[#fde047] text-black w-[178px] rounded-[22px] shadow-xl p-3">
           <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
-            <img src={assets.coach} alt="mentor" className="w-full h-full object-cover" />
+            <img src={assets.Hrishikesh_Surlekar} alt="mentor" className="w-full h-full object-cover" />
           </div>
           <p className="text-[14px] leading-5 font-semibold">
-            Chandan helps people get into podcasting
+          Duke University
           </p>
         </div>
-        <div className="absolute top-[200px] left-0 rotate-[12deg] bg-[#bfdbfe] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+        <div className="absolute top-[180px] left-0 rotate-[12deg] bg-[#bfdbfe] text-black w-[178px] rounded-[22px] shadow-xl p-3">
           <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
-            <img src={assets.consultant} alt="mentor" className="w-full h-full object-cover" />
+            <img src={assets.Anoushka_Shinde} alt="mentor" className="w-full h-full object-cover" />
           </div>
           <p className="text-[14px] leading-5 font-semibold">
-            Dyumna helps you build your personal brand!
+          Indiana University, Bloomington, MS Data Science
           </p>
         </div>
-        <div className="absolute bottom-[-35px] left-10 rotate-[-15deg] bg-[#fbcfe8] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+        <div className="absolute bottom-[-20px] left-10 rotate-[-15deg] bg-[#fbcfe8] text-black w-[178px] rounded-[22px] shadow-xl p-3">
           <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
-            <img src={assets.harvard} alt="mentor" className="w-full h-full object-cover" />
+            <img src={assets.Soham_Pawaskar} alt="mentor" className="w-full h-full object-cover" />
           </div>
           <p className="text-[14px] leading-5 font-semibold">
-            Mark helps you produce your song!
+          University of Maryland
           </p>
         </div>
       </div>
@@ -126,28 +126,28 @@ const Hero = () => {
     {/* Right stacked cards */}
     <div className="hidden lg:block absolute right-[30px] top-8">
       <div className="relative w-[220px] h-[520px]">
-        <div className="absolute top-0 right-6 rotate-[20deg] bg-[#fbcfe8] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+        <div className="absolute top-[-10px] right-6 rotate-[20deg] bg-[#fbcfe8] text-black w-[178px] rounded-[22px] shadow-xl p-3">
           <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
-            <img src={assets.stanford} alt="mentor" className="w-full h-full object-cover" />
+            <img src={assets.Kritik_Shetty} alt="mentor" className="w-full h-full object-cover" />
           </div>
           <p className="text-[14px] leading-5 font-semibold">
-            Hafsa helps you apply to Princeton
+          Kritik Shetty	Frankfurt School of Finance and Management Masters in Management	Germany
           </p>
         </div>
-        <div className="absolute top-[190px] right-2 rotate-[-3deg] bg-[#bfdbfe] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+        <div className="absolute top-[230px] right-2 rotate-[-3deg] bg-[#bfdbfe] text-black w-[178px] rounded-[22px] shadow-xl p-3">
           <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
-            <img src={assets.coach} alt="mentor" className="w-full h-full object-cover" />
+            <img src={assets.Shardul_Datar} alt="mentor" className="w-full h-full object-cover" />
           </div>
           <p className="text-[14px] leading-5 font-semibold">
-            Karthik helps you build AI tools
+          University of Southern California MS
           </p>
         </div>
-        <div className="absolute bottom-[-50px] right-8 rotate-[-15deg] bg-[#fde047] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+        <div className="absolute bottom-[-100px] right-8 rotate-[-13deg] bg-[#fde047] text-black w-[178px] rounded-[22px] shadow-xl p-3">
           <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
-            <img src={assets.consultant} alt="mentor" className="w-full h-full object-cover" />
+            <img src={assets.Somita_Chaudhari} alt="mentor" className="w-full h-full object-cover" />
           </div>
           <p className="text-[14px] leading-5 font-semibold">
-            Shreyans helps you build your startup
+          IT University of Maryland Baltimore
           </p>
         </div>
       </div>
