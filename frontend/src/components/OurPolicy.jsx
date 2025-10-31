@@ -18,7 +18,7 @@ const OurPolicy = () => {
       <div>
         <img src={assets.consultant} className='w-7 m-auto mb-5' alt="" />
         <p className=' font-semibold'>Committed Mentors Who Go the Extra Mile</p>
-        <p className=' text-gray-400'>Our mentors have assisted our students in building passion projects, writing essays, getting a good grade on their calculus test, landing internships, landing podcast guests, getting a good SAT score and so much more.</p>
+        <p className=' text-gray-400'>Our mentors have assisted our students in building passion projects, writing essays, getting a good grade on their calculus test, landing internships, getting a good SAT score and so much more.</p>
       </div>
 
     </div>

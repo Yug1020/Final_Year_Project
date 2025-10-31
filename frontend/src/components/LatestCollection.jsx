@@ -20,7 +20,7 @@ const LatestCollection = () => {
       <div className='text-center py-8 text-3xl'>
           <Title text1={'BEST'} text2={'MENTORS'} />
           <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
-          Looking to apply to For Masters ? Our mentors student will guide you through the whole process.
+          Looking to apply for Masters ? Our mentors will guide you through the whole process.
           </p>
       </div>
 

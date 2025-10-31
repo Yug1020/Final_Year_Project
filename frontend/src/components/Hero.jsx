@@ -80,7 +80,7 @@ const Hero = () => {
           <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.2-1.3-5.2-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.2 1.3 5.2 3.6zM142.7 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.2-1.3-5.2-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.2 1.3 5.2 3.6zM119.5 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.2-1.3-5.2-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.2 1.3 5.2 3.6z" />
         </svg>
         <div className="absolute bottom-0 w-full h-10 bg-white/5 flex justify-center items-center text-white">
-          Github
+          Shravan Parkar
         </div>
       </div>
 
@@ -99,7 +99,7 @@ const Hero = () => {
         >
         </svg>
         <div className="absolute bottom-0 w-full h-10 bg-white/5 flex justify-center items-center text-white">
-          Code
+          Yugandhar Dhore
         </div>
       </div>
 
@@ -118,7 +118,7 @@ const Hero = () => {
         >
         </svg>
         <div className="absolute bottom-0 w-full h-10 bg-white/5 flex justify-center items-center text-white">
-          Earn
+          Vedant Pawar
         </div>
       </div>
     </div>
