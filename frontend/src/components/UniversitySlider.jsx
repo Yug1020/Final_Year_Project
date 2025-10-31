@@ -5,10 +5,24 @@ const UniversitySlider = () => {
   const universities = [
     { image: assets.harvard },
     { image: assets.stanford },
-    { image: assets.harvard },
-    { image: assets.stanford },
-    { image: assets.harvard },
-    { image: assets.stanford },
+    { image: assets.Brown_University},
+    { image: assets.Caltech_University},
+    { image: assets.Cambridge_University},
+    { image: assets.Chicago_University},
+    { image: assets.Columbia_University},
+    { image: assets.Cornell_Univerity},
+    { image: assets.Dartmouth_University},
+    { image: assets.Duke_University},
+    { image: assets.Johns_Hopkins_University},
+    { image: assets.Northwestern_University},
+    { image: assets.MIT},
+    { image: assets.Oxford_University},
+    { image: assets.Pennsylvania_University},
+    { image: assets.Princeton_University},
+    { image: assets.Rice_University},
+    { image: assets.Vanderbilt_University},
+    { image: assets.Washington_University},
+    { image: assets.Yale_University},
   ];
 
   // Duplicate slides for seamless infinite loop
@@ -31,7 +45,7 @@ const UniversitySlider = () => {
               <img
                 src={university.image}
                 alt={`University ${index + 1}`}
-                className="w-64 h-40 object-contain brightness-110 hover:scale-105 transition-transform duration-300"
+                className="w-64 h-40 object-contain brightness-110 hover:scale-105 transition-transform duration-900"
               />
             </div>
           ))}
