@@ -68,6 +68,9 @@ const Product = () => {
           <img src={assets.star_dull_icon} alt="" className="w-3.5" />
           <p className='pl-2 text-sm text-gray-600'>(122)</p>
       </div>
+      {productData.mastersCountry && (
+        <p className='mt-2 text-sm text-gray-600'>Country: <span className='font-medium text-gray-900'>{productData.mastersCountry}</span></p>
+      )}
       <p className='mt-6 text-3xl font-semibold text-gray-900'>{currency}{productData.price}</p>
       <p className='mt-6 text-gray-600 leading-relaxed'>{productData.description}</p>
 
