@@ -26,6 +26,13 @@ import Germany from "./Germany.png"
 import UK from "./UK.png"
 import USA from "./USA.png"
 import new_zealand from "./new_zealand.png"
+import Anoushka_Sangal           from "./Anoushka_Sangal.png"
+import Hrishikesh_Shetty           from "./Hrishikesh_Shetty.png"
+import Kritik_Shetty           from "./Kritik_Shetty.png"
+import Shardul_Datta           from "./Shardul_Datta.png"
+import Soham_Pawaskar           from "./Soham_Pawaskar.png"
+import Somita_Chaudhari           from "./Somita_Chaudhari.png"
+
 
 export const assets = {
     logo,
@@ -53,7 +60,13 @@ export const assets = {
     Germany,
     UK,
     USA,
-    new_zealand
+    new_zealand,
+    Anoushka_Sangal,
+    Hrishikesh_Shetty,
+    Kritik_Shetty,
+    Shardul_Datta,   
+    Soham_Pawaskar,   
+    Somita_Chaudhari 
 }
 
 export default assets;
