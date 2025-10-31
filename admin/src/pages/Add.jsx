@@ -12,6 +12,7 @@ const Add = ({token}) => {
   // const [image4,setImage4] = useState(false)
 
    const [name, setName] = useState("");
+   const [email, setEmail] = useState("");
    const [description, setDescription] = useState("");
    const [details, setDetails] = useState("");
    const [price, setPrice] = useState("");
@@ -56,6 +57,7 @@ const Add = ({token}) => {
       const formData = new FormData()
 
       formData.append("name",name)
+      formData.append("email",email)
       formData.append("description",description)
       formData.append("price",price)
      formData.append("category", category)
@@ -76,6 +78,7 @@ const Add = ({token}) => {
       if (response.data.success) {
         toast.success(response.data.message)
         setName('')
+        setEmail('')
         setDescription('')
        setImage1(false)
         setPrice('')
@@ -120,6 +123,11 @@ const Add = ({token}) => {
         <div className='w-full'>
           <p className='mb-2'>Mentor name</p>
           <input onChange={(e)=>setName(e.target.value)} value={name} className='w-full max-w-[500px] px-3 py-2' type="text" placeholder='Type here' required/>
+        </div>
+
+        <div className='w-full'>
+          <p className='mb-2'>Mentor Email</p>
+          <input onChange={(e)=>setEmail(e.target.value)} value={email} className='w-full max-w-[500px] px-3 py-2' type="email" placeholder='mentor@example.com' required/>
         </div>
 
         <div className='w-full'>
