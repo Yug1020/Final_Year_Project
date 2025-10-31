@@ -50,6 +50,7 @@ import Rice_University                          from "./Rice_University.png"
 import Vanderbilt_University                          from "./Vanderbilt_University.png"
 import Washington_University                          from "./Washington_University.png"
 import Yale_University                          from "./Yale_University.png"
+import MentorMap_logo from "./MentorMap_logo.jpg"
 
 export const assets = {
     logo,
@@ -101,7 +102,8 @@ export const assets = {
     Vanderbilt_University   ,
     Washington_University   ,
     Yale_University         ,
-    Caltech_University      
+    Caltech_University,
+    MentorMap_logo      
 }
 
 export default assets;

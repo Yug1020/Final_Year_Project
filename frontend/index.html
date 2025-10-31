@@ -19,11 +19,18 @@
         s0.parentNode.insertBefore(s1, s0);
       })();
       
-      // Once the Tawk.to chat widget loads, send your custom welcome message
+      // Once Tawk.to widget is fully loaded
       Tawk_API.onLoad = function() {
-        Tawk_API.addEvent('welcome_message', {
-          message: "👋 Hi there! Welcome to MentorMap!\n\nHere are some quick questions I can help you with:\n1️⃣ What is MentorMap?\n2️⃣ How does MentorMap work?\n3️⃣ How can I find a mentor?\n4️⃣ Do mentors help with studying abroad?\n5️⃣ How can I book a session?\n6️⃣ Is MentorMap free to use?\n7️⃣ How can I contact support?\n\n👉 Just type any question above to get the answer!"
-        });
+        // Optional: Open the chat widget automatically (comment out if you don’t want that)
+        Tawk_API.maximize();
+      
+        // Delay a bit to ensure chat is ready
+        setTimeout(function() {
+          Tawk_API.addEvent('Welcome_Message_Shown'); // optional tracking
+          Tawk_API.sendMessage({
+            text: "👋 Hi there! Welcome to MentorMap!\n\nHere are some quick questions I can help you with:\n1️⃣ What is MentorMap?\n2️⃣ How does MentorMap work?\n3️⃣ How can I find a mentor?\n4️⃣ Do mentors help with studying abroad?\n5️⃣ How can I book a session?\n6️⃣ Is MentorMap free to use?\n7️⃣ How can I contact support?\n\n👉 Just type any question above to get the answer!"
+          });
+        }, 1500);
       };
       </script>
       <!--End of Tawk.to Script-->

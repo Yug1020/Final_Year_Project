@@ -11,7 +11,7 @@ const Contact = () => {
       </div>
 
       <div className='my-10 flex flex-col md:flex-row gap-16'>
-          <img className='w-full md:max-w-[450px]' src={assets.about_img} alt="" />
+          <img className='w-full md:max-w-[450px]' src={assets.MentorMap_logo} alt="" />
           <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600'>
               <p>MentorMap is a career guidance platform designed to help students aspiring to pursue their master’s degrees. It connects users with experienced mentors who offer personalized support for career planning, course selection, and doubt-solving. Our goal is to simplify the journey of higher education by providing expert mentorship and real-world insights from professionals who have already achieved success in their respective fields.</p>
               <p>At MentorMap, we believe that the right mentor can make all the difference. Our platform helps students discover their interests, explore global education opportunities, and make confident decisions about their future. With an easy-to-use interface and dedicated guidance, MentorMap empowers learners to take the next step toward their dream career.</p>
