@@ -44,6 +44,15 @@ const Orders = ({ token }) => {
     }
   }
 
+  const parseTiming = (size) => {
+    if (!size || size === 'default') return null;
+    const parts = size.split('_');
+    if (parts.length === 3) {
+      return { day: parts[0], start: parts[1], end: parts[2] };
+    }
+    return null;
+  }
+
   useEffect(() => {
     fetchAllOrders();
   }, [token])
@@ -75,7 +84,20 @@ const Orders = ({ token }) => {
                 <p>{order.address.phone}</p>
               </div>
               <div>
-                {/* <p className='text-sm sm:text-[15px]'>Items : {order.items.length}</p> */}
+                {/* Mentor Email and Availability for each item */}
+                {order.items.map((item, index) => {
+                  const timing = parseTiming(item.size);
+                  return (
+                    <div key={index} className={index === 0 ? 'mt-3' : 'mt-2'}>
+                      {item.email && <p className='text-xs sm:text-sm mb-1'><span className='font-medium'>Mentor Email:</span> {item.email}</p>}
+                      {timing && (
+                        <p className='text-xs sm:text-sm mb-2'>
+                          <span className='font-medium'>Session:</span> {timing.day} ({timing.start} - {timing.end})
+                        </p>
+                      )}
+                    </div>
+                  );
+                })}
                 <p className='mt-3'>Method : {order.paymentMethod}</p>
                 <p>Payment : { order.payment ? 'Done' : 'Pending' }</p>
                 <p>Date : {new Date(order.date).toLocaleDateString()}</p>
