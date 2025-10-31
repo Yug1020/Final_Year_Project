@@ -29,7 +29,7 @@ const UniversitySlider = () => {
   const duplicatedUniversities = [...universities, ...universities];
 
   return (
-    <div className="flex flex-col justify-center items-center h-[60vh] bg-black p-10 overflow-hidden">
+    <div className="flex flex-col justify-center items-center h-[60vh] bg-black p-10 rounded-3xl overflow-hidden">
       <h2 className="text-white text-center mb-10 text-4xl md:text-5xl font-bold tracking-wide">
         Universities Where Our Mentors Are From
       </h2>

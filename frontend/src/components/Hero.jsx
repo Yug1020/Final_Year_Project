@@ -5,8 +5,14 @@ const Hero = () => {
   return (
   <section
     id="home"
-    className="relative overflow-hidden text-white bg-gradient-to-br from-[#667eea] to-[#764ba2] py-[120px] pb-[80px]"
-  >
+    // className="relative overflow-hidden text-white bg-gradient-to-br from-[#667eea] to-[#764ba2] py-[120px] pb-[80px]"
+    // className=" relative overflow-hidden py-[130px] pb-[80px] bg-[linear-gradient(to_bottom,#fff_0%,#fff_40%,rgba(255,255,255,0)_100%),linear-gradient(to_right,orange,orange)] before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(90deg,#ccc_1px,transparent_1px)] before:bg-[length:50px_100%] before:pointer-events-none before:[mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_0%,rgba(0,0,0,0)_70%)] before:[-webkit-mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_0%,rgba(0,0,0,0)_70%)]"
+     className="relative overflow-hidden w-[120%] -ml-[10%] py-[163px] pb-[80px] rounded-3xl
+bg-[linear-gradient(to_bottom,#fff_0%,#fff_40%,rgba(255,255,255,0)_100%),linear-gradient(to_right,transparent_0%,rgba(255,165,0,0.6)_3%,rgba(255,165,0,0.8)_5%,orange_10%,orange_90%,rgba(255,165,0,0.8)_95%,rgba(255,165,0,0.6)_97%,transparent_100%)]
+before:content-[''] before:absolute before:inset-0 before:bg-[linear-gradient(90deg,#ccc_1px,transparent_1px)]
+before:bg-[length:50px_100%] before:pointer-events-none before:[mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_0%,rgba(0,0,0,0)_70%)]
+before:[-webkit-mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_0%,rgba(0,0,0,0)_70%)]">
+
     <div className="max-w-[1200px] mx-auto px-5 text-center">
 
       {/* 🔹 Main Content */}
@@ -131,10 +137,10 @@ const Hero = () => {
             <img src={assets.Kritik_Shetty} alt="mentor" className="w-full h-full object-cover" />
           </div>
           <p className="text-[14px] leading-5 font-semibold">
-          Kritik Shetty	Frankfurt School of Finance and Management Masters in Management	Germany
+          Frankfurt School of Finance and Management, Germany
           </p>
         </div>
-        <div className="absolute top-[230px] right-2 rotate-[-3deg] bg-[#bfdbfe] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+        <div className="absolute top-[213px] right-2 rotate-[-7deg] bg-[#bfdbfe] text-black w-[178px] rounded-[22px] shadow-xl p-3">
           <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
             <img src={assets.Shardul_Datar} alt="mentor" className="w-full h-full object-cover" />
           </div>
@@ -142,7 +148,7 @@ const Hero = () => {
           University of Southern California MS
           </p>
         </div>
-        <div className="absolute bottom-[-100px] right-8 rotate-[-13deg] bg-[#fde047] text-black w-[178px] rounded-[22px] shadow-xl p-3">
+        <div className="absolute bottom-[-80px] right-8 rotate-[6deg] bg-[#fde047] text-black w-[178px] rounded-[22px] shadow-xl p-3">
           <div className="rounded-[18px] overflow-hidden h-[120px] mb-3">
             <img src={assets.Somita_Chaudhari} alt="mentor" className="w-full h-full object-cover" />
           </div>

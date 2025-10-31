@@ -8,7 +8,7 @@ const ProductItem = ({id,image,name}) => {
   const description = product?.description || '';
 
   return (
-    <Link onClick={() => scrollTo(0, 0)} className='block border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden bg-white p-3' to={`/product/${id}`}>
+    <Link onClick={() => scrollTo(0, 0)} className='block border border-gray-200 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden bg-[#FEE8C9] p-3' to={`/product/${id}`}>
       <div className='overflow-hidden rounded-md mb-3'>
         <img className='w-70 h-60 object-cover' src={image[0]} alt={name} />
       </div>

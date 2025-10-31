@@ -16,8 +16,8 @@ const LatestCollection = () => {
     const rowBDuplicated = [...rowB, ...rowB];
 
   return (
-    <div className='my-10'>
-      <div className='text-center py-8 text-3xl'>
+    <div className='my-10 py-10 w-[120%] -ml-[10%] bg-[linear-gradient(to_bottom,transparent_0%,rgba(189,195,199,0.2)_10%,rgba(189,195,199,0.4)_15%,rgba(189,195,199,0.6)_20%,rgba(189,195,199,0.8)_25%,rgb(189,195,199)_30%,rgb(189,195,199)_70%,rgba(189,195,199,0.8)_75%,rgba(189,195,199,0.6)_80%,rgba(189,195,199,0.4)_85%,rgba(189,195,199,0.2)_90%,transparent_100%),linear-gradient(to_right,transparent_0%,rgba(189,195,199,0.2)_5%,rgba(189,195,199,0.4)_10%,rgba(189,195,199,0.6)_15%,rgba(189,195,199,0.8)_20%,rgb(189,195,199)_25%,rgb(189,195,199)_75%,rgba(189,195,199,0.8)_80%,rgba(189,195,199,0.6)_85%,rgba(189,195,199,0.4)_90%,rgba(189,195,199,0.2)_95%,transparent_100%)] rounded-3xl overflow-x-hidden'>
+      <div className='text-center py-8 text-3xl '>
           <Title text1={'BEST'} text2={'MENTORS'} />
           <p className='w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600'>
           Looking to apply for Masters ? Our mentors will guide you through the whole process.
