@@ -89,6 +89,7 @@ const Orders = ({ token }) => {
                   const timing = parseTiming(item.size);
                   return (
                     <div key={index} className={index === 0 ? 'mt-3' : 'mt-2'}>
+                      {item.name && <p className='text-xs sm:text-sm mb-1'><span className='font-medium'>Mentor name:</span> {item.name}</p>}
                       {item.email && <p className='text-xs sm:text-sm mb-1'><span className='font-medium'>Mentor Email:</span> {item.email}</p>}
                       {timing && (
                         <p className='text-xs sm:text-sm mb-2'>
