@@ -30,7 +30,7 @@ const List = ({ token }) => {
       const response = await axios.post(backendUrl + '/api/product/remove', { id }, { headers: { token } })
 
       if (response.data.success) {
-        toast.success(response.data.message)
+        toast.success("Mentor Removed")
         await fetchList();
       } else {
         toast.error(response.data.message)
@@ -40,6 +40,33 @@ const List = ({ token }) => {
       console.log(error)
       toast.error(error.message)
     }
+  }
+
+  const formatAvailability = (availability) => {
+    if (!availability) {
+      return 'Not set';
+    }
+    
+    // Handle string format (if it's stored as JSON string)
+    let availabilityArray = availability;
+    if (typeof availability === 'string') {
+      try {
+        availabilityArray = JSON.parse(availability);
+      } catch (e) {
+        return 'Not set';
+      }
+    }
+    
+    // Check if it's an array and has items
+    if (!Array.isArray(availabilityArray) || availabilityArray.length === 0) {
+      return 'Not set';
+    }
+    
+    // Format each slot
+    return availabilityArray
+      .filter(slot => slot && slot.day && slot.start && slot.end)
+      .map(slot => `${slot.day} (${slot.start}-${slot.end})`)
+      .join(', ') || 'Not set';
   }
 
   useEffect(() => {
@@ -53,10 +80,10 @@ const List = ({ token }) => {
 
         {/* ------- List Table Title ---------- */}
 
-        <div className='hidden md:grid grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm'>
+        <div className='hidden md:grid grid-cols-[1fr_3fr_2fr_1fr_1fr] items-center py-1 px-2 border bg-gray-100 text-sm'>
           <b>Image</b>
           <b>Name</b>
-          <b>Category</b>
+          <b>Availability</b>
           <b>Price</b>
           <b className='text-center'>Action</b>
         </div>
@@ -65,10 +92,10 @@ const List = ({ token }) => {
 
         {
           list.map((item, index) => (
-            <div className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border text-sm' key={index}>
+            <div className='grid grid-cols-[1fr_3fr_2fr_1fr_1fr] md:grid-cols-[1fr_3fr_2fr_1fr_1fr] items-center gap-2 py-1 px-2 border text-sm' key={index}>
               <img className='w-12' src={item.image[0]} alt="" />
               <p>{item.name}</p>
-              <p>{item.category}</p>
+              <p className='text-xs'>{formatAvailability(item.availability)}</p>
               <p>{currency}{item.price}</p>
               <p onClick={()=>removeProduct(item._id)} className='text-right md:text-center cursor-pointer text-lg'>X</p>
             </div>
