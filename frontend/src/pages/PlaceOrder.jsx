@@ -8,7 +8,7 @@ import { toast } from 'react-toastify'
 
 const PlaceOrder = () => {
 
-    const [method, setMethod] = useState('cod');
+    const [method, setMethod] = useState('razorpay');
     const { navigate, backendUrl, token, cartItems, setCartItems, getCartAmount, delivery_fee, products } = useContext(ShopContext);
     const [formData, setFormData] = useState({
         firstName: '',
@@ -47,6 +47,10 @@ const PlaceOrder = () => {
                 }
             }
         }
+        if (!window || !window.Razorpay) {
+            toast.error('Payment gateway not loaded. Please refresh and try again.')
+            return;
+        }
         const rzp = new window.Razorpay(options)
         rzp.open()
     }
@@ -54,6 +58,15 @@ const PlaceOrder = () => {
     const onSubmitHandler = async (event) => {
         event.preventDefault()
         try {
+            if (!backendUrl) {
+                toast.error('Service unavailable. Please try again later.')
+                return;
+            }
+            if (!token) {
+                toast.error('Please login to continue')
+                navigate('/login')
+                return;
+            }
 
             let orderItems = []
 
@@ -68,6 +81,11 @@ const PlaceOrder = () => {
                         }
                     }
                 }
+            }
+
+            if (orderItems.length === 0) {
+                toast.error('Your cart is empty')
+                return;
             }
 
             let orderData = {
@@ -127,7 +145,7 @@ const PlaceOrder = () => {
             <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
 
                 <div className='text-xl sm:text-2xl my-3'>
-                    <Title text1={'DELIVERY'} text2={'INFORMATION'} />
+                    <Title text1={'STUDENT'} text2={'INFORMATION'} />
                 </div>
                 <div className='flex gap-3'>
                     <input required onChange={onChangeHandler} name='firstName' value={formData.firstName} className='border border-gray-300 rounded py-1.5 px-3.5 w-full' type="text" placeholder='First name' />
@@ -155,7 +173,7 @@ const PlaceOrder = () => {
                     </div>
 
                     <div className='w-full text-end mt-8'>
-                        <button type='submit' className='bg-black text-white px-16 py-3 text-sm'>PLACE ORDER</button>
+                        <button type='submit' className='bg-black text-white px-16 py-3 text-sm'>CONFIRM SESSION</button>
                     </div>
                 </div>
             </div>
