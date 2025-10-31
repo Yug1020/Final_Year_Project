@@ -32,6 +32,24 @@ import Kritik_Shetty from "./Kritik_Shetty.png"
 import Shardul_Datar from "./Shardul_Datar.png"
 import Soham_Pawaskar from "./Soham_Pawaskar.png"
 import Somita_Chaudhari from "./Somita_Chaudhari.png"
+import Brown_University                          from "./Brown_University.png"
+import Caltech_University                          from "./Caltech_University.png"
+import Cambridge_University                          from "./Cambridge_University.png"
+import Chicago_University                          from "./Chicago_University.png"
+import Columbia_University                          from "./Columbia_University.png"
+import Cornell_Univerity                          from "./Cornell_University.png"
+import Dartmouth_University                          from "./Dartmouth_University.png"
+import Duke_University                          from "./Duke_University.png"
+import Johns_Hopkins_University                          from "./Johns_Hopkins_University.png"
+import MIT                          from "./MIT.png"
+import Northwestern_University                          from "./Northwestern_University.png"
+import Oxford_University                          from "./Oxford_University.png"
+import Pennsylvania_University                          from "./Pennsylvania_University.png"
+import Princeton_University                          from "./Princeton_University.png"
+import Rice_University                          from "./Rice_University.png"
+import Vanderbilt_University                          from "./Vanderbilt_University.png"
+import Washington_University                          from "./Washington_University.png"
+import Yale_University                          from "./Yale_University.png"
 
 export const assets = {
     logo,
@@ -65,7 +83,25 @@ export const assets = {
     Kritik_Shetty,
     Shardul_Datar,   
     Soham_Pawaskar,   
-    Somita_Chaudhari 
+    Somita_Chaudhari,
+    Brown_University,        
+    Cambridge_University    ,
+    Chicago_University      ,
+    Columbia_University     ,
+    Cornell_Univerity      ,
+    Dartmouth_University    ,
+    Duke_University         ,
+    Johns_Hopkins_University,
+    MIT                     ,
+    Northwestern_University ,
+    Oxford_University       ,
+    Pennsylvania_University ,
+    Princeton_University    ,
+    Rice_University         ,
+    Vanderbilt_University   ,
+    Washington_University   ,
+    Yale_University         ,
+    Caltech_University      
 }
 
 export default assets;
