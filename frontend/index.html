@@ -7,17 +7,26 @@
     <title>MentorMap</title>
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true;
-    s1.src='https://embed.tawk.to/690474642205221951472185/1j8smdafq';
-    s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
-    <!--End of Tawk.to Script-->
+      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+      
+      (function() {
+        var s1 = document.createElement("script"),
+            s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = 'https://embed.tawk.to/690474642205221951472185/1j8smdafq';
+        s1.charset = 'UTF-8';
+        s1.setAttribute('crossorigin', '*');
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+      
+      // Once the Tawk.to chat widget loads, send your custom welcome message
+      Tawk_API.onLoad = function() {
+        Tawk_API.addEvent('welcome_message', {
+          message: "👋 Hi there! Welcome to MentorMap!\n\nHere are some quick questions I can help you with:\n1️⃣ What is MentorMap?\n2️⃣ How does MentorMap work?\n3️⃣ How can I find a mentor?\n4️⃣ Do mentors help with studying abroad?\n5️⃣ How can I book a session?\n6️⃣ Is MentorMap free to use?\n7️⃣ How can I contact support?\n\n👉 Just type any question above to get the answer!"
+        });
+      };
+      </script>
+      <!--End of Tawk.to Script-->
   </head>
   <body>
     <div id="root"></div>
