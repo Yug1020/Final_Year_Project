@@ -52,6 +52,8 @@ import Washington_University from "./Washington_University.png"
 import Yale_University from "./Yale_University.png"
 import MentorMap_logo from "./MentorMap_logo.jpg"
 import yug from "./yug.png"
+import shravan from "./shravan.jpg"
+import vedant from "./vedant.jpg"
 
 export const assets = {
     logo,
@@ -105,7 +107,9 @@ export const assets = {
     Yale_University,
     Caltech_University,
     MentorMap_logo,
-    yug
+    yug,
+    shravan,
+    vedant
 }
 
 export default assets;

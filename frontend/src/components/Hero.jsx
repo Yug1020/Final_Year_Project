@@ -77,14 +77,11 @@ before:[-webkit-mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_0%,rgba(0,0,0
         className="relative w-[180px] h-[200px] bg-gradient-to-b from-white/10 to-transparent border border-white/10 shadow-[0_25px_25px_rgba(0,0,0,0.25)] flex justify-center items-center transition-all duration-500 rounded-[10px] mx-[-45px] backdrop-blur-[10px]
         [transform:rotate(calc(var(--r)*1deg))] group-hover:[transform:rotate(0deg)] group-hover:mx-[10px]"
       >
-        <svg
-          viewBox="0 0 496 512"
-          height="1em"
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-white text-[2.5em] fill-white"
-        >
-          <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.2-1.3-5.2-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.2 1.3 5.2 3.6zM142.7 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.2-1.3-5.2-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.2 1.3 5.2 3.6zM119.5 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.2-1.3-5.2-3.6 0-2 2.3-3.6 5.2-3.6 3.3-.3 5.2 1.3 5.2 3.6z" />
-        </svg>
+        <img
+            src={assets.shravan}
+            alt="Shravan Parkar"
+            className="w-35 h-30 rounded-lg object-cover border-2 border-transparent"
+          />
         
         <div className="absolute bottom-0 w-full h-10 bg-white/5 flex justify-center items-center text-white">
           Shravan Parkar
@@ -119,13 +116,11 @@ before:[-webkit-mask-image:linear-gradient(to_bottom,rgba(0,0,0,1)_0%,rgba(0,0,0
         className="relative w-[180px] h-[200px] bg-gradient-to-b from-white/10 to-transparent border border-white/10 shadow-[0_25px_25px_rgba(0,0,0,0.25)] flex justify-center items-center transition-all duration-500 rounded-[10px] mx-[-45px] backdrop-blur-[10px]
         [transform:rotate(calc(var(--r)*1deg))] group-hover:[transform:rotate(0deg)] group-hover:mx-[10px]"
       >
-        <svg
-          viewBox="0 0 576 512"
-          height="1em"
-          xmlns="http://www.w3.org/2000/svg"
-          className="text-white text-[2.5em] fill-white"
-        >
-        </svg>
+        <img
+            src={assets.vedant}
+            alt="Vedant Pawar"
+            className="w-35 h-30 rounded-lg object-cover border-2 border-transparent"
+          />
         <div className="absolute bottom-0 w-full h-10 bg-white/5 flex justify-center items-center text-white">
           Vedant Pawar
         </div>
