@@ -1,5 +1,5 @@
 import validator from "validator";
-import bcrypt from "bcrypt"
+import bcrypt from "bcryptjs"
 import jwt from 'jsonwebtoken'
 import userModel from "../models/userModel.js";
 
@@ -20,7 +20,7 @@ const loginUser = async (req, res) => {
             return res.json({ success: false, message: "User doesn't exists" })
         }
 
-        const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = bcrypt.compareSync(password, user.password);
 
         if (isMatch) {
 
@@ -59,8 +59,8 @@ const registerUser = async (req, res) => {
         }
 
         // hashing user password
-        const salt = await bcrypt.genSalt(10)
-        const hashedPassword = await bcrypt.hash(password, salt)
+    const salt = bcrypt.genSaltSync(10)
+    const hashedPassword = bcrypt.hashSync(password, salt)
 
         const newUser = new userModel({
             name,
