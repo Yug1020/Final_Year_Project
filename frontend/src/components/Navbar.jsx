@@ -8,7 +8,7 @@ const Navbar = () => {
 
     const [visible,setVisible] = useState(false);
 
-    const {setShowSearch , getCartCount , navigate, token, setToken, setCartItems} = useContext(ShopContext);
+    const {getCartCount , navigate, token, setToken, setCartItems} = useContext(ShopContext);
 
     const logout = () => {
         navigate('/login')
@@ -54,7 +54,7 @@ const Navbar = () => {
                 <img onClick={()=> token ? null : navigate('/login') } className='w-5 cursor-pointer' src={assets.profile_icon} alt="" />
                 {/* Dropdown Menu */}
                 {token && 
-                <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
+                <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4 z-10'>
                     <div className='flex flex-col gap-2 w-36 py-3 px-5  bg-slate-100 text-gray-500 rounded'>
                         <p className='cursor-pointer hover:text-black'>My Profile</p>
                         <p onClick={()=>navigate('/orders')} className='cursor-pointer hover:text-black'>Orders</p>
@@ -70,7 +70,7 @@ const Navbar = () => {
       </div>
 
         {/* Sidebar menu for small screens */}
-        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${visible ? 'w-full' : 'w-0'}`}>
+        <div className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all z-10 ${visible ? 'w-full' : 'w-0'}`}>
                 <div className='flex flex-col text-gray-600'>
                     <div onClick={()=>setVisible(false)} className='flex items-center gap-4 p-3 cursor-pointer'>
                         <img className='h-4 rotate-180' src={assets.dropdown_icon} alt="" />

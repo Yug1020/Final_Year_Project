@@ -112,4 +112,4 @@ export const assets = {
     vedant
 }
 
-export default assets;
+// export default assets;

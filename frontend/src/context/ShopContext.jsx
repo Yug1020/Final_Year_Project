@@ -62,7 +62,7 @@ const ShopContextProvider = (props) =>
                         totalCount += cartItems[items][item];
                     }
                 } catch (error) {
-
+                    alert("Session added will take time to reflect on page")
                 } 
             }
         }
@@ -100,7 +100,7 @@ const ShopContextProvider = (props) =>
                         totalAmount += itemInfo.price * cartItems[items][item];
                     }
                 } catch (error) {
-
+                    alert("Total Amount is added.It will take time to reflect on page")
                 }
             }
         }
